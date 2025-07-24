@@ -1,8 +1,38 @@
-cd username.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Personal Website</h1>
+    <p>Here you can find my videos, images, and documents.</p>
+  </header>
 
-echo "Hello World" > index.html
-git add --all
+  <section>
+    <h2>📸 Image Gallery</h2>
+    <img src="assets/your_image.jpg" alt="Sample Image" class="media" />
+  </section>
 
-git commit -m "Initial commit"
+  <section>
+    <h2>🎞️ Video Showcase</h2>
+    <video class="media" controls>
+      <source src="assets/your_video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
 
-git push -u origin main
+  <section>
+    <h2>📄 Documents</h2>
+    <a href="assets/your_resume.pdf" download>Download My Resume (PDF)</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Your Name</p>
+  </footer>
+</body>
+</html>
+
