@@ -1,52 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zachary Ostrow | Cybersecurity Student</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Professional Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 3px solid #e9ecef;
+            overflow-x: auto;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 1rem 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .tab-button:hover {
+            background: #e9ecef;
+            color: #2c3e50;
+            transform: translateY(-2px);
+        }
+
+        .tab-button.active {
+            background: white;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #3498db;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { width: 0; margin: 0 50%; }
+            to { width: 100%; margin: 0; }
+        }
+
+        .tab-content {
+            display: none;
+            padding: 3rem;
+            animation: fadeIn 0.5s ease;
+            min-height: 500px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #3498db;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .experience-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .company {
+            font-size: 1.1rem;
+            color: #3498db;
+            margin: 0.5rem 0;
+        }
+
+        .date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: #e9ecef;
+            transform: scale(1.05);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .resume-section {
+            margin-bottom: 2rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .skill-item {
+            background: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background: #2980b9;
+            transform: scale(1.05);
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 2rem;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+            }
+            
+            header {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .tab-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .nav-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab-button {
+                flex: none;
+                min-width: 120px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
     <div class="container">
-      <h1>Zachary Ostrow</h1>
-      <p>Computer Science & Cybersecurity Enthusiast | University of Maryland</p>
-    </div>
-  </header>
+        <header>
+            <h1>Your Name</h1>
+            <p class="subtitle">Professional Title | Industry Expert</p>
+        </header>
 
-  <section class="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I’m a Computer Science major with a focus on Cybersecurity, AI, and software engineering. I build secure, scalable, and innovative solutions using Python, Java, C, and Linux. Currently working on ReconAI, a tool to automate financial workflows with AI and QuickBooks.</p>
-    </div>
-  </section>
+        <nav class="nav-tabs">
+            <button class="tab-button active" onclick="openTab(event, 'about')">About Me</button>
+            <button class="tab-button" onclick="openTab(event, 'experience')">Experience</button>
+            <button class="tab-button" onclick="openTab(event, 'contact')">Contact</button>
+            <button class="tab-button" onclick="openTab(event, 'resume')">Resume</button>
+        </nav>
 
-  <section class="projects">
-    <div class="container">
-      <h2>Featured Projects</h2>
-      <ul>
-        <li><strong>ReconAI</strong> – AI-powered bookkeeping assistant with QuickBooks integration</li>
-        <li><strong>80check2-threaded</strong> – 11111C multithreaded log checker using Pthreads</li>
-        <li><strong>maec</strong> – Makefile parser and executor with dependency resolution in C</li>
-      </ul>
-    </div>
-  </section>
+        <div id="about" class="tab-content active">
+            <h2 class="section-title">About Me</h2>
+            <div class="card">
+                <p>Welcome to my professional portfolio. I am a dedicated professional with a passion for excellence and innovation. My journey has been marked by continuous learning, meaningful contributions, and a commitment to delivering exceptional results.</p>
+                
+                <p>With years of experience in my field, I bring a unique blend of technical expertise, creative problem-solving, and leadership skills. I thrive in collaborative environments and am always eager to take on new challenges that push the boundaries of what's possible.</p>
+                
+                <p>When I'm not working, I enjoy staying current with industry trends, contributing to open-source projects, and mentoring the next generation of professionals. I believe in the power of technology and human creativity to solve complex problems and create positive impact.</p>
+            </div>
 
-  <section class="resume">
-    <div class="container">
-      <h2>📄 Resume</h2>
-      <a href="assets/Zachary_Ostrow_Resume_V1.3.docx" download> Download My Resume </a>
-    </div>
-  </section>
+            <div class="card">
+                <h3>Core Values</h3>
+                <ul style="margin-top: 1rem; padding-left: 2rem;">
+                    <li>Innovation and continuous improvement</li>
+                    <li>Integrity and ethical practices</li>
+                    <li>Collaboration and team success</li>
+                    <li>Quality and attention to detail</li>
+                    <li>Learning and knowledge sharing</li>
+                </ul>
+            </div>
+        </div>
 
-  <footer>
-    <div class="container">
-      <p>© 2025 Zachary Ostrow | <a href="mailto:ZOstrow05@gmail.com">Contact Me</a></p>
+        <div id="experience" class="tab-content">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="job-title">Senior Position Title</div>
+                <div class="company">Company Name</div>
+                <div class="date">January 2022 - Present</div>
+                <p>Led cross-functional teams to deliver innovative solutions that improved efficiency by 30%. Managed key client relationships and drove strategic initiatives that resulted in significant revenue growth. Mentored junior team members and established best practices across the organization.</p>
+                <ul style="margin-top: 1rem; padding-left: 2rem;">
+                    <li>Key achievement or responsibility</li>
+                    <li>Important project or milestone</li>
+                    <li>Leadership or technical accomplishment</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">Previous Position Title</div>
+                <div class="company">Previous Company</div>
+                <div class="date">June 2019 - December 2021</div>
+                <p>Developed and implemented comprehensive strategies that enhanced operational performance. Collaborated with stakeholders to identify opportunities for improvement and executed solutions that delivered measurable results.</p>
+                <ul style="margin-top: 1rem; padding-left: 2rem;">
+                    <li>Notable project or achievement</li>
+                    <li>Process improvement or innovation</li>
+                    <li>Team collaboration or leadership role</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">Earlier Position Title</div>
+                <div class="company">Earlier Company</div>
+                <div class="date">March 2017 - May 2019</div>
+                <p>Built foundational skills and contributed to various projects that supported organizational objectives. Demonstrated strong analytical abilities and attention to detail while working in a fast-paced environment.</p>
+                <ul style="margin-top: 1rem; padding-left: 2rem;">
+                    <li>Learning experience or skill development</li>
+                    <li>Contribution to team goals</li>
+                    <li>Professional growth milestone</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="contact" class="tab-content">
+            <h2 class="section-title">Contact Information</h2>
+            <p>I'd love to hear from you! Whether you're interested in collaboration, have questions about my work, or want to discuss potential opportunities, feel free to reach out.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">@</div>
+                    <div>
+                        <strong>Email</strong><br>
+                        your.email@example.com
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <strong>Phone</strong><br>
+                        (555) 123-4567
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <div>
+                        <strong>LinkedIn</strong><br>
+                        linkedin.com/in/yourprofile
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <div>
+                        <strong>Website</strong><br>
+                        www.yourwebsite.com
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <strong>Location</strong><br>
+                        City, State, Country
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💻</div>
+                    <div>
+                        <strong>GitHub</strong><br>
+                        github.com/yourusername
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="resume" class="tab-content">
+            <h2 class="section-title">Resume</h2>
+            
+            <div class="resume-section">
+                <h3>Education</h3>
+                <div class="card">
+                    <strong>Degree Name</strong><br>
+                    University Name<br>
+                    <em>Graduation Year</em>
+                </div>
+            </div>
+
+            <div class="resume-section">
+                <h3>Technical Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">JavaScript</div>
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">React</div>
+                    <div class="skill-item">Node.js</div>
+                    <div class="skill-item">SQL</div>
+                    <div class="skill-item">AWS</div>
+                    <div class="skill-item">Git</div>
+                    <div class="skill-item">Docker</div>
+                </div>
+            </div>
+
+            <div class="resume-section">
+                <h3>Certifications</h3>
+                <div class="card">
+                    <ul>
+                        <li>Professional Certification Name (Year)</li>
+                        <li>Technical Certification Name (Year)</li>
+                        <li>Industry Certification Name (Year)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="resume-section">
+                <h3>Key Achievements</h3>
+                <div class="card">
+                    <ul>
+                        <li>Led successful project that resulted in 25% efficiency improvement</li>
+                        <li>Received Employee of the Year award for outstanding performance</li>
+                        <li>Published article in industry publication</li>
+                        <li>Spoke at professional conference about industry best practices</li>
+                    </ul>
+                </div>
+            </div>
+
+            <a href="#" class="download-btn" onclick="alert('Resume download functionality would be implemented here')">Download PDF Resume</a>
+        </div>
     </div>
-  </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            
+            // Remove active class from all tab buttons
+            tablinks = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            
+            // Show the selected tab and mark the button as active
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Add smooth scrolling and animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
 
  
 
