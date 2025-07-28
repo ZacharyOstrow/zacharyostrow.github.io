@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Professional Portfolio</title>
+    <title>Zachary M. Ostrow - Professional Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -218,7 +218,7 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 1rem;
             margin-top: 1rem;
         }
@@ -258,6 +258,27 @@
             box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
         }
 
+        .project-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tech {
+            color: #e74c3c;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
         @media (max-width: 768px) {
             .container {
                 margin: 0;
@@ -289,13 +310,14 @@
 <body>
     <div class="container">
         <header>
-            <h1>Your Name</h1>
-            <p class="subtitle">Professional Title | Industry Expert</p>
+            <h1>Zachary M. Ostrow</h1>
+            <p class="subtitle">Computer Science Student | Cybersecurity Specialist</p>
         </header>
 
         <nav class="nav-tabs">
             <button class="tab-button active" onclick="openTab(event, 'about')">About Me</button>
             <button class="tab-button" onclick="openTab(event, 'experience')">Experience</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
             <button class="tab-button" onclick="openTab(event, 'contact')">Contact</button>
             <button class="tab-button" onclick="openTab(event, 'resume')">Resume</button>
         </nav>
@@ -303,21 +325,21 @@
         <div id="about" class="tab-content active">
             <h2 class="section-title">About Me</h2>
             <div class="card">
-                <p>Welcome to my professional portfolio. I am a dedicated professional with a passion for excellence and innovation. My journey has been marked by continuous learning, meaningful contributions, and a commitment to delivering exceptional results.</p>
+                <p>Welcome to my professional portfolio. I am a dedicated Computer Science student at the University of Maryland College Park with a concentration in Cybersecurity. Currently maintaining a 3.9 GPA and recognized with the Presidential Scholarship and Dean's List honors twice.</p>
                 
-                <p>With years of experience in my field, I bring a unique blend of technical expertise, creative problem-solving, and leadership skills. I thrive in collaborative environments and am always eager to take on new challenges that push the boundaries of what's possible.</p>
+                <p>With over two years of experience in bookkeeping and financial management, I bring a unique blend of technical expertise and business acumen. I have successfully managed financials for over 10 small businesses totaling more than $5M in value, while simultaneously developing my skills in cybersecurity, AI/ML, and software development.</p>
                 
-                <p>When I'm not working, I enjoy staying current with industry trends, contributing to open-source projects, and mentoring the next generation of professionals. I believe in the power of technology and human creativity to solve complex problems and create positive impact.</p>
+                <p>As a passionate educator, I have tutored 15+ students in Computer Science, Calculus, and Physics, and actively promote STEM education in my community. I'm currently working on ReconAI, an innovative AI-powered bookkeeping assistant that integrates with QuickBooks to revolutionize small business accounting.</p>
             </div>
 
             <div class="card">
-                <h3>Core Values</h3>
+                <h3>Core Values & Interests</h3>
                 <ul style="margin-top: 1rem; padding-left: 2rem;">
-                    <li>Innovation and continuous improvement</li>
-                    <li>Integrity and ethical practices</li>
-                    <li>Collaboration and team success</li>
-                    <li>Quality and attention to detail</li>
-                    <li>Learning and knowledge sharing</li>
+                    <li>Cybersecurity and digital privacy protection</li>
+                    <li>AI/ML applications in business automation</li>
+                    <li>STEM education and community outreach</li>
+                    <li>Financial technology and small business solutions</li>
+                    <li>Continuous learning and academic excellence</li>
                 </ul>
             </div>
         </div>
@@ -326,39 +348,61 @@
             <h2 class="section-title">Professional Experience</h2>
             
             <div class="experience-item">
-                <div class="job-title">Senior Position Title</div>
-                <div class="company">Company Name</div>
-                <div class="date">January 2022 - Present</div>
-                <p>Led cross-functional teams to deliver innovative solutions that improved efficiency by 30%. Managed key client relationships and drove strategic initiatives that resulted in significant revenue growth. Mentored junior team members and established best practices across the organization.</p>
+                <div class="job-title">Bookkeeper</div>
+                <div class="company">PL Consulting & ABC Consulting</div>
+                <div class="date">March 2022 - Present</div>
+                <p>Managed comprehensive bookkeeping operations for over 10 small businesses, utilizing QuickBooks Online to track financials across businesses totaling over $5M in value. Led user onboarding processes and conducted regular update meetings with clients.</p>
                 <ul style="margin-top: 1rem; padding-left: 2rem;">
-                    <li>Key achievement or responsibility</li>
-                    <li>Important project or milestone</li>
-                    <li>Leadership or technical accomplishment</li>
+                    <li>Managed day-to-day bookkeeping, invoicing, and reconciliation processes</li>
+                    <li>Oversaw financial tracking for businesses worth over $5M collectively</li>
+                    <li>Led client onboarding and conducted regular financial update meetings</li>
                 </ul>
             </div>
 
             <div class="experience-item">
-                <div class="job-title">Previous Position Title</div>
-                <div class="company">Previous Company</div>
-                <div class="date">June 2019 - December 2021</div>
-                <p>Developed and implemented comprehensive strategies that enhanced operational performance. Collaborated with stakeholders to identify opportunities for improvement and executed solutions that delivered measurable results.</p>
+                <div class="job-title">Computer Science & Math Tutor</div>
+                <div class="company">Freelance</div>
+                <div class="date">March 2021 - Present</div>
+                <p>Provided personalized tutoring services to 15+ high school and college students in Computer Science, Calculus, and Physics. Facilitated educational workshops and guest teaching sessions to promote STEM education in local communities.</p>
                 <ul style="margin-top: 1rem; padding-left: 2rem;">
-                    <li>Notable project or achievement</li>
-                    <li>Process improvement or innovation</li>
-                    <li>Team collaboration or leadership role</li>
+                    <li>Tutored 15+ students in Computer Science, Calculus, and Physics</li>
+                    <li>Facilitated workshops to promote STEM education in local communities</li>
+                    <li>Conducted guest teaching sessions at educational institutions</li>
                 </ul>
             </div>
 
             <div class="experience-item">
-                <div class="job-title">Earlier Position Title</div>
-                <div class="company">Earlier Company</div>
-                <div class="date">March 2017 - May 2019</div>
-                <p>Built foundational skills and contributed to various projects that supported organizational objectives. Demonstrated strong analytical abilities and attention to detail while working in a fast-paced environment.</p>
+                <div class="job-title">Technology Intern</div>
+                <div class="company">Disruptive Inc.</div>
+                <div class="date">March 2024 - May 2024</div>
+                <p>Provided comprehensive technical QA and UX feedback for new conversational AI tools through detailed analysis and reporting. Developed and implemented an AI-driven baseball betting model with 50-60% accuracy for deployment.</p>
                 <ul style="margin-top: 1rem; padding-left: 2rem;">
-                    <li>Learning experience or skill development</li>
-                    <li>Contribution to team goals</li>
-                    <li>Professional growth milestone</li>
+                    <li>Delivered extensive 7-page technical QA and UX feedback report for AI tools</li>
+                    <li>Developed AI-driven baseball betting model with 50-60% accuracy</li>
+                    <li>Contributed to product improvement through detailed analysis and testing</li>
                 </ul>
+            </div>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="project-item">
+                <div class="project-title">ReconAI - AI-Powered Bookkeeping Assistant</div>
+                <div class="project-tech">Python | API Integration | AI/ML</div>
+                <p>Currently designing and developing an innovative AI-powered bookkeeping assistant that integrates with QuickBooks via API. Leveraging Python and web development technologies to automate transaction categorization and financial reporting for small businesses. The system is intended to provide up to 50% more analytical insights than standard QuickBooks functionality.</p>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Space Invaders Game</div>
+                <div class="project-tech">Java | Object-Oriented Programming</div>
+                <p>Developed a comprehensive simulation of the classic Space Invaders game utilizing advanced object-oriented programming concepts including inheritance, polymorphism, and various sorting algorithms. The project demonstrates proficiency in Java programming and game development principles.</p>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Advancements of Mathematics & Cryptography</div>
+                <div class="project-tech">Research Thesis | Cryptography</div>
+                <p>Conducted extensive research exploring the historical development of cryptography and mathematics during WWI & WWII. Examined the origins and functions of major cryptographic algorithms including RSA, AES, DES, and ECC. Detailed essential security concepts required to protect modern internet devices and digital communications.</p>
             </div>
         </div>
 
@@ -371,7 +415,7 @@
                     <div class="contact-icon">@</div>
                     <div>
                         <strong>Email</strong><br>
-                        your.email@example.com
+                        ZOstrow05@gmail.com
                     </div>
                 </div>
                 
@@ -379,7 +423,7 @@
                     <div class="contact-icon">📱</div>
                     <div>
                         <strong>Phone</strong><br>
-                        (555) 123-4567
+                        (443) 890-5058
                     </div>
                 </div>
                 
@@ -387,15 +431,7 @@
                     <div class="contact-icon">💼</div>
                     <div>
                         <strong>LinkedIn</strong><br>
-                        linkedin.com/in/yourprofile
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">🌐</div>
-                    <div>
-                        <strong>Website</strong><br>
-                        www.yourwebsite.com
+                        linkedin.com/in/zachary-ostrow-87b4592a6/
                     </div>
                 </div>
                 
@@ -403,15 +439,23 @@
                     <div class="contact-icon">📍</div>
                     <div>
                         <strong>Location</strong><br>
-                        City, State, Country
+                        Baltimore, MD
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🎓</div>
+                    <div>
+                        <strong>University</strong><br>
+                        University of Maryland College Park
                     </div>
                 </div>
                 
                 <div class="contact-item">
                     <div class="contact-icon">💻</div>
                     <div>
-                        <strong>GitHub</strong><br>
-                        github.com/yourusername
+                        <strong>Specialization</strong><br>
+                        Cybersecurity & AI/ML
                     </div>
                 </div>
             </div>
@@ -423,23 +467,37 @@
             <div class="resume-section">
                 <h3>Education</h3>
                 <div class="card">
-                    <strong>Degree Name</strong><br>
-                    University Name<br>
-                    <em>Graduation Year</em>
+                    <strong>Bachelor of Science in Computer Science</strong><br>
+                    <em>Cybersecurity Concentration</em><br>
+                    University of Maryland College Park<br>
+                    <strong>Expected Graduation:</strong> May 2027<br>
+                    <strong>GPA:</strong> 3.9/4.0 | Dean's List (2x) | Presidential Scholarship<br><br>
+                    <strong>Relevant Coursework:</strong> Object Oriented Programming I & II (Java), Introduction to Computer Systems (C), Discrete Structures, Introduction to Probability I & II (R, R Studio)
                 </div>
             </div>
 
             <div class="resume-section">
                 <h3>Technical Skills</h3>
+                <h4 style="margin-top: 1rem; margin-bottom: 0.5rem;">Languages & Tools:</h4>
                 <div class="skills-grid">
-                    <div class="skill-item">JavaScript</div>
                     <div class="skill-item">Python</div>
-                    <div class="skill-item">React</div>
-                    <div class="skill-item">Node.js</div>
-                    <div class="skill-item">SQL</div>
-                    <div class="skill-item">AWS</div>
+                    <div class="skill-item">Java</div>
+                    <div class="skill-item">C</div>
+                    <div class="skill-item">HTML</div>
+                    <div class="skill-item">R</div>
                     <div class="skill-item">Git</div>
-                    <div class="skill-item">Docker</div>
+                    <div class="skill-item">QuickBooks Online</div>
+                    <div class="skill-item">AppSheet</div>
+                    <div class="skill-item">Microsoft Suite</div>
+                </div>
+                
+                <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">Technologies:</h4>
+                <div class="skills-grid">
+                    <div class="skill-item">Linux/Unix</div>
+                    <div class="skill-item">API Integration</div>
+                    <div class="skill-item">Cybersecurity</div>
+                    <div class="skill-item">AI/ML</div>
+                    <div class="skill-item">Cryptography</div>
                 </div>
             </div>
 
@@ -447,9 +505,7 @@
                 <h3>Certifications</h3>
                 <div class="card">
                     <ul>
-                        <li>Professional Certification Name (Year)</li>
-                        <li>Technical Certification Name (Year)</li>
-                        <li>Industry Certification Name (Year)</li>
+                        <li>Currently studying for CompTIA Security+ certification</li>
                     </ul>
                 </div>
             </div>
@@ -458,10 +514,12 @@
                 <h3>Key Achievements</h3>
                 <div class="card">
                     <ul>
-                        <li>Led successful project that resulted in 25% efficiency improvement</li>
-                        <li>Received Employee of the Year award for outstanding performance</li>
-                        <li>Published article in industry publication</li>
-                        <li>Spoke at professional conference about industry best practices</li>
+                        <li>Maintained 3.9 GPA while managing $5M+ in business financials</li>
+                        <li>Received Presidential Scholarship and Dean's List honors (2x)</li>
+                        <li>Successfully tutored 15+ students in advanced STEM subjects</li>
+                        <li>Developed AI model with 50-60% accuracy for sports betting application</li>
+                        <li>Led comprehensive financial management for 10+ small businesses</li>
+                        <li>Conducted extensive research on cryptographic algorithms and security</li>
                     </ul>
                 </div>
             </div>
@@ -508,6 +566,4 @@
     </script>
 </body>
 </html>
-
- 
 
