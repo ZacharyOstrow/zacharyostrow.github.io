@@ -18,12 +18,26 @@
             background: linear-gradient(135deg, #001f4d 0%, #000d33 100%);
             min-height: 100vh;
         }
-        .circle-photo {
-            width: 200px;         
-            height: 200px;        
-            object-fit: cover;     
-            border-radius: 50%;     
-        }
+        
+       .header-flex {
+    display: flex;
+    justify-content: space-between; /* keeps name left, image right */
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-text {
+    text-align: left;
+}
+
+.circle-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
 
         .container {
             max-width: 1200px;
@@ -39,6 +53,7 @@
             padding: 2rem;
             text-align: center;
             gap: 15px;
+            justif
         }
 
         header::before {
@@ -251,9 +266,10 @@
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            margin-top: 2rem;
+            margin-top: .5rem;
             float: right;
-            margin-down: 50px;
+            position: relative;
+            top: -20px;
         }
 
         .download-btn:hover {
@@ -309,18 +325,16 @@
             }
         }
     </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-          <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <img src="assets/linkpic.jpeg" class="circle-photo">
-                <div>
-                      <h1 style="margin: 0;">Zachary M. Ostrow</h1>
-                      <p class="subtitle">Computer Science Student | Cybersecurity Specialist</p>
-                </div>
-          </div>
-        </header>
+<header>
+  <div class="header-flex">
+    <div class="header-text">
+      <h1>Zachary M. Ostrow</h1>
+      <p class="subtitle">Computer Science Student | Cybersecurity Specialist</p>
+    </div>
+    <img src="assets/linkpic.jpeg" class="circle-photo" />
+  </div>
+</header>
+
 
 
         <nav class="nav-tabs">
