@@ -18,16 +18,12 @@
             background: linear-gradient(135deg, #001f4d 0%, #000d33 100%);
             min-height: 100vh;
         }
-        
-  
-.circle-photo {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-left: 1rem;
-}
-
+        .circle-photo {
+            width: 200px;         
+            height: 200px;        
+            object-fit: cover;     
+            border-radius: 50%;     
+        }
 
         .container {
             max-width: 1200px;
@@ -43,7 +39,6 @@
             padding: 2rem;
             text-align: center;
             gap: 15px;
-            justif
         }
 
         header::before {
@@ -256,10 +251,9 @@
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            margin-top: .5rem;
+            margin-top: 2rem;
             float: right;
-            position: relative;
-            top: -20px;
+            margin-down: 50px;
         }
 
         .download-btn:hover {
@@ -315,15 +309,19 @@
             }
         }
     </style>
-<header>
-  <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
-    <img src="assets/linkpic.jpeg" class="circle-photo">
-    <div>
-      <h1 style="margin: 0;">Zachary M. Ostrow</h1>
-      <p class="subtitle">Computer Science Student | Cybersecurity Specialist</p>
-    </div>
-  </div>
-</header>
+</head>
+<body>
+    <div class="container">
+        <header>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <img src="assets/linkpic.jpeg" class="circle-photo">
+                <div>
+                      <h1 style="margin: 0;">Zachary M. Ostrow</h1>
+                      <p class="subtitle">Computer Science Student | Cybersecurity Specialist</p>
+                </div>
+          </div>
+        </header>
+
 
         <nav class="nav-tabs">
             <button class="tab-button active" onclick="openTab(event, 'about')">About Me</button>
@@ -576,4 +574,3 @@
     </script>
 </body>
 </html>
-
