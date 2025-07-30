@@ -19,17 +19,7 @@
             min-height: 100vh;
         }
         
-       .header-flex {
-    display: flex;
-    justify-content: space-between; /* keeps name left, image right */
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.header-text {
-    text-align: left;
-}
-
+  
 .circle-photo {
     width: 150px;
     height: 150px;
@@ -326,16 +316,14 @@
         }
     </style>
 <header>
-  <div class="header-flex">
-    <div class="header-text">
-      <h1>Zachary M. Ostrow</h1>
+  <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+    <img src="assets/linkpic.jpeg" class="circle-photo">
+    <div>
+      <h1 style="margin: 0;">Zachary M. Ostrow</h1>
       <p class="subtitle">Computer Science Student | Cybersecurity Specialist</p>
     </div>
-    <img src="assets/linkpic.jpeg" class="circle-photo" />
   </div>
 </header>
-
-
 
         <nav class="nav-tabs">
             <button class="tab-button active" onclick="openTab(event, 'about')">About Me</button>
