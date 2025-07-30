@@ -26,8 +26,7 @@
             border: 3px solid #333; 
             margin-left: 800px;
             margin-up: 200px;
-            
-    }
+        }
 
         .container {
             max-width: 1200px;
@@ -42,6 +41,7 @@
             color: white;
             padding: 2rem;
             text-align: center;
+            gap: 15px;
         }
 
         header::before {
@@ -314,7 +314,8 @@
 <body>
     <div class="container">
         <header>
-            <h1>Zachary M. Ostrow </h1> <img src="assets/linkpic.jpeg" class="circle-photo">
+            <img src="assets/linkpic.jpeg" class="circle-photo">
+            <h1>Zachary M. Ostrow </h1> 
             <p class="subtitle">Computer Science Student | Cybersecurity Specialist</p>
         </header>
 
@@ -467,8 +468,9 @@
 
         <div id="resume" class="tab-content">
             <h2 class="section-title">Resume</h2>
-            <a href="assets/Zachary_Ostrow_Resume_V1.3.docx" class="download-btn" download>Download Word Resume</a>
-        
+            <div class="resume-section">
+                <a href="assets/Zachary_Ostrow_Resume_V1.3.docx" class="download-btn" download>Download Word Resume</a>
+            </div>
             <div class="resume-section">
                 <h3>Education</h3>
                 <div class="card">
