@@ -253,7 +253,7 @@
             display: inline-block;
             margin-top: 2rem;
             float: right;
-            margin-down: 200px;
+            margin-down: 50px;
         }
 
         .download-btn:hover {
@@ -313,10 +313,15 @@
 <body>
     <div class="container">
         <header>
-            <img src="assets/linkpic.jpeg" class="circle-photo">
-            <h1>Zachary M. Ostrow </h1> 
-            <p class="subtitle">Computer Science Student | Cybersecurity Specialist</p>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <img src="assets/linkpic.jpeg" class="circle-photo">
+                <div>
+                      <h1 style="margin: 0;">Zachary M. Ostrow</h1>
+                      <p class="subtitle">Computer Science Student | Cybersecurity Specialist</p>
+                </div>
+          </div>
         </header>
+
 
         <nav class="nav-tabs">
             <button class="tab-button active" onclick="openTab(event, 'about')">About Me</button>
