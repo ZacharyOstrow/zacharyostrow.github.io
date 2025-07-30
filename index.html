@@ -18,6 +18,13 @@
             background: linear-gradient(135deg, #001f4d 0%, #000d33 100%);
             min-height: 100vh;
         }
+        .circle-photo {
+            width: 200px;         
+            height: 200px;        
+            object-fit: cover;     
+            border-radius: 50%;     
+            border: 3px solid #333; 
+    }
 
         .container {
             max-width: 1200px;
@@ -304,7 +311,9 @@
 <body>
     <div class="container">
         <header>
-            <h1>Zachary M. Ostrow</h1>
+            <h1>Zachary M. Ostrow
+                <img src="asset/image.png" alt="Profile" class="circle-photo">
+            </h1>
             <p class="subtitle">Computer Science Student | Cybersecurity Specialist</p>
         </header>
 
